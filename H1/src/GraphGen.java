@@ -10,11 +10,6 @@ public class GraphGen {
         long startTime = System.currentTimeMillis();
         int nodes = Integer.parseInt(args[0]);
         int k = Integer.parseInt(args[1]);
-        if(nodes < k)
-        {
-            System.out.println("nodes must be >= k");
-            System.exit(1);
-        }
         if (k > 1 && nodes < 2*k)
         {
             System.out.println("nodes must be >= 2*k to allow disjoint clique and independent set");
@@ -25,7 +20,7 @@ public class GraphGen {
         Random rand = new Random();
 
         for(int i = 0; i < nodes; i++){
-            for(int j = i+1; j <= nodes; j++){
+            for(int j = i+1; j < nodes; j++){
                 int edge = rand.nextBoolean() ? 1 : 0;
                 matrix[i][j] = edge;
                 matrix[j][i] = edge;
