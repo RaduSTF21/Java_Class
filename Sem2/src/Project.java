@@ -12,6 +12,9 @@ public class Project
         System.out.println("Project created");
         is_occupied = false;
     }
+    public String toString(){
+        return name;
+    }
     public void getName(){
         System.out.println(name);
     }
