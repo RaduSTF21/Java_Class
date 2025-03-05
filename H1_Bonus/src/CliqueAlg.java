@@ -20,7 +20,7 @@ public class CliqueAlg {
         Random rand = new Random();
 
         for(int i = 0; i < nodes; i++){
-            for(int j = i+1; j <= nodes; j++){
+            for(int j = i+1; j < nodes; j++){
                 int edge = rand.nextBoolean() ? 1 : 0;
                 matrix[i][j] = edge;
                 matrix[j][i] = edge;
@@ -31,9 +31,9 @@ public class CliqueAlg {
         System.out.println(matrixString);
 
         boolean hasClique = hasClique(matrix, k);
-        System.out.println(hasClique);
+        System.out.println("Clica: " + hasClique);
         boolean hasStableSet = hasStableSet(matrix, k);
-        System.out.println(hasStableSet);
+        System.out.println("Multime stabila: " + hasStableSet);
 
     }
     private static String buildMatrixString(int[][] matrix) {
