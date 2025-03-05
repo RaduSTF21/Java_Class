@@ -16,10 +16,10 @@ public class CliqueAlg {
             System.exit(1);
         }
 
-        int[][] matrix = new int[nodes + 2][nodes + 2];
+        int[][] matrix = new int[nodes + 1][nodes + 1];
         Random rand = new Random();
 
-        for(int i = 1; i < nodes; i++){
+        for(int i = 0; i < nodes; i++){
             for(int j = i+1; j <= nodes; j++){
                 int edge = rand.nextBoolean() ? 1 : 0;
                 matrix[i][j] = edge;
