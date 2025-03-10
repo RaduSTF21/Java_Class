@@ -22,7 +22,7 @@ public class Person {
      * Returns the name of the person
      * @return the name
      */
-    /
+
     public String getName() {
         return name;
     }
@@ -47,6 +47,8 @@ public class Person {
      * Checks if two persons are the same.
      * Two persnons are equal if they have the same name and birth date
      *
+     * @param obj the object to compare with
+     * @return {@code true} if the persons are equal; {@code false} otherwise
      */
 
     @Override
