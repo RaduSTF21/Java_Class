@@ -4,6 +4,7 @@
  * It maintains arrays of students, teachers, and projects and provides methods
  * to add participants and projects, retrieve all persons involved, and allocate projects
  * to students using a simple greedy algorithm.
+ *
  * </p>
  */
 public class Problem {

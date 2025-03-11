@@ -8,6 +8,7 @@ public class Student extends Person {
     private Project allocatedProject;
 
     /**
+     *
      * Constructs a Student with the given parameters.
      *
      * @param name                the name of the student

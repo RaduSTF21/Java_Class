@@ -36,6 +36,7 @@ public class Teacher extends Person {
     }
 
     /**
+     *
      * Checks if this teacher is equal to another object.
      * Two teachers are considered equal if they represent the same person.
      *

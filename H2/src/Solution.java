@@ -66,6 +66,7 @@ public class Solution {
         }
 
         // Print all persons involved in the problem
+
         System.out.println("\nAll persons involved:");
         for (Person person : problem.getPersons()) {
             System.out.println(person);
