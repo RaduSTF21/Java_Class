@@ -158,7 +158,19 @@ public class Problem {
         for(int i = 0 ;i< studentCount;i++)
         {
             Student student = students[i];
-            if(student.getAllocatedProject)
+            if(student.getAllocatedProject() == null)
+            {
+                for(int k = 0;k<projectCount;k++)
+                {
+                    Project project = projects[k];
+                    if(project.getAssignedStudent() == null)
+                    {
+                        student.assignProject(project);
+                        project.assignStudent(student);
+                        break; //Stop once a project is assigned
+                    }
+                }
+            }
         }
     }
 
