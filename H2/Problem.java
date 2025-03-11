@@ -120,14 +120,17 @@ public class Problem {
     }
 
     /**
-     * Allocates projects to students using a simple greedy algorithm
+     * Allocates projects to students using a two-pass greedy algorithm
      * <p>
-     *     For each student the algorithm assigns the first acceptable project that is available.
+     *     In the first pass each student gets the first acceptable project that is available.
+     *     In the second pass (fail safe) , any student who remains unallocated is assigned the first available
+     *     project from the list, regardless of whether it is acceptable
      * </p>
      */
 
     public void allocateProjects()
     {
+        //First pass : assign acceptable projects
         for(int i = 0; i<studentCount; i++)
         {
             Student student = students[i];
@@ -147,8 +150,15 @@ public class Problem {
                     student.assignProject(project);
                     project.assignStudent(student);
                     break;
-                }
+                }an
             }
+        }
+
+        //Fail-safe pass : assign any available project to unallocated students
+        for(int i = 0 ;i< studentCount;i++)
+        {
+            Student student = students[i];
+            if(student.getAllocatedProject)
         }
     }
 
