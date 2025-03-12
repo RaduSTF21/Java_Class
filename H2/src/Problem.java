@@ -112,7 +112,7 @@ public class Problem {
      * Allocates projects to students using a two-pass greedy algorithm.
      * <p>
      * In the first pass, each student is assigned the first acceptable project that is available.
-     * In the second (fail safe) pass, any student who remains unallocated is assigned the first available
+     * In the second (fail-safe) pass, any student who remains unallocated is assigned the first available
      * project from the list, regardless of whether it is acceptable.
      * </p>
      */
