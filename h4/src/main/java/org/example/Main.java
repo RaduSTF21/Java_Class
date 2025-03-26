@@ -31,7 +31,7 @@ public class Main {
         for (int i = 0; i < numLocations; i++) {
             String fakeName = faker.address().city();
 
-             Type type = types[random.nextInt(types.length)];
+             Type type;
             int typeIndex = random.nextInt(3);
             if (typeIndex == 0) {
                 type = Type.FRIENDLY;
