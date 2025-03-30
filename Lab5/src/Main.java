@@ -1,6 +1,7 @@
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Path;
 import java.time.LocalDate;
 import java.util.Collections;
 import java.util.List;
@@ -12,9 +13,9 @@ public class Main {
 
         Repository img = new Repository("img");
         LocalDate date = LocalDate.now();
-        Image first = new Image("datsun", date, Collections.singletonList("#cars"), new File("/home/Stefan/Downloads/1963_chevrolet_corvette-coupe_1963-Corvette-Split-window-077-04568-scaled.jpg"));
-        Image second = new Image("corvette", date,Collections.singletonList("#cars"), new File("/home/Stefan/Downloads/1963_chevrolet_corvette-coupe_1963-Corvette-Split-window-077-04568-scaled.jpg"));
-        Image third = new Image("rarri", date,Collections.singletonList("#race-cars"), new File("/home/Stefan/Downloads/ferrari-499p-hypercar-diecast-model-bburago-18-16301-b.jpg"));
+        Image first = new Image("datsun", date, Collections.singletonList("#cars"), new File("/home/Stefan/Downloads/1963_chevrolet_corvette-coupe_1963-Corvette-Split-window-077-04568-scaled.jpg").toPath());
+        Image second = new Image("corvette", date,Collections.singletonList("#cars"), new File("/home/Stefan/Downloads/1963_chevrolet_corvette-coupe_1963-Corvette-Split-window-077-04568-scaled.jpg").toPath());
+        Image third = new Image("rarri", date,Collections.singletonList("#race-cars"), Path.of("/home/Stefan/Downloads/ferrari-499p-hypercar-diecast-model-bburago-18-16301-b.jpg"));
 
         img.addImage(first);
         img.addImage(second);
