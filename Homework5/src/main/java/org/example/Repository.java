@@ -13,6 +13,10 @@ public class Repository{
         this.name = name;
         this.images = new ArrayList<>();
     }
+    public Repository(){
+        this.images = new ArrayList<>();
+        this.name = "default";
+    }
 
     public void addImage(Image image){
         this.images.add(image);

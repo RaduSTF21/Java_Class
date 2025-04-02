@@ -14,7 +14,7 @@ public class ReportCommand implements Command {
     public void execute(String[] args, Repository repository)throws CommandException {
         try {
             Configuration cfg = new Configuration(Configuration.VERSION_2_3_34);
-            cfg.setClassForTemplateLoading(ReportCommand.class, "/home/Stefan/IdeaProjects/Java_Class/Homework5/src/resources/templates");
+            cfg.setClassForTemplateLoading(ReportCommand.class, "/templates");
             Template template = cfg.getTemplate("report.ftl");
             Map<String,Object> data = new HashMap<>();
             data.put("images", repository.getImages());
@@ -22,7 +22,12 @@ public class ReportCommand implements Command {
             try(Writer out = new FileWriter(repFile)){
                 template.process(data, out);
             }
-            Desktop.getDesktop().browse(repFile.toURI());
+            if (Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Desktop.Action.BROWSE)) {
+                Desktop.getDesktop().browse(repFile.toURI());
+            } else {
+                System.out.println("Desktop browse action is not supported. Please open " + repFile.getAbsolutePath() + " manually.");
+            }
+
             System.out.println("Report generated and opened");
         }
         catch (Exception e) {
