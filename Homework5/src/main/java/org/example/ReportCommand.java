@@ -22,14 +22,12 @@ public class ReportCommand implements Command {
             try(Writer out = new FileWriter(repFile)){
                 template.process(data, out);
             }
-            if (Desktop.isDesktopSupported()) {
+
                 Desktop desktop = Desktop.getDesktop();
                 if (desktop.isSupported(Desktop.Action.OPEN)) {
                     desktop.open(repFile);
-                } else {
-                    System.out.println("Desktop actions not supported. Please open " + repFile.getAbsolutePath() + " manually.");
                 }
-            } else {
+            else {
                 System.out.println("Desktop is not supported on this environment. Please open " + repFile.getAbsolutePath() + " manually.");
             }
 
