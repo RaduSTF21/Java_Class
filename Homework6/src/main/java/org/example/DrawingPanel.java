@@ -22,7 +22,6 @@ public class DrawingPanel extends JPanel {
     private BufferedImage image;
     private Graphics2D offscreen;
 
-    // Game logic variables
     private boolean isPlayerOneTurn = true;
     private double playerOneScore = 0.0;
     private double playerTwoScore = 0.0;
@@ -35,7 +34,6 @@ public class DrawingPanel extends JPanel {
         generateRandDots(configPanel.getVal());
         setPreferredSize(new Dimension(canvasWidth, canvasHeight));
 
-        // Add mouse listener for selecting dots and drawing lines
         addMouseListener(new MouseAdapter() {
             private Point selectedDot = null;
 
@@ -87,17 +85,14 @@ public class DrawingPanel extends JPanel {
     }
 
     public void addLine(Point p1, Point p2) {
-        // Create a new line with the current player color: Blue for Player 1, Red for Player 2.
         GameLine newLine = new GameLine(p1, p2, isPlayerOneTurn ? Color.BLUE : Color.RED);
         lines.add(newLine);
-        // Update score based on the Euclidean distance between dots
         double length = p1.distance(p2);
         if (isPlayerOneTurn) {
             playerOneScore += length;
         } else {
             playerTwoScore += length;
         }
-        // Toggle player turn
         isPlayerOneTurn = !isPlayerOneTurn;
         updateOffscreen();
         repaint();
@@ -132,12 +127,10 @@ public class DrawingPanel extends JPanel {
         }
     }
 
-    // Getter for the offscreen image to support exporting.
     public BufferedImage getImage() {
         return image;
     }
 
-    // Save the current game state via serialization.
     public void saveGame(String filename) {
         GameState state = new GameState();
         state.dots = dots;
@@ -153,7 +146,6 @@ public class DrawingPanel extends JPanel {
         }
     }
 
-    // Load a game state from file.
     public void loadGame(String filename) {
         try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(filename))) {
             GameState state = (GameState) in.readObject();
@@ -170,7 +162,6 @@ public class DrawingPanel extends JPanel {
         }
     }
 
-    // Compute the minimum spanning tree (MST) cost using Prim's algorithm.
     public double computeMSTCost() {
         int n = dots.size();
         if (n == 0) return 0.0;
@@ -201,10 +192,10 @@ public class DrawingPanel extends JPanel {
                 }
             }
         }
+
         return totalCost;
     }
 
-    // Reset game scores and turn indicator (useful for new games).
     public void resetGameScores() {
         isPlayerOneTurn = true;
         playerOneScore = 0.0;
