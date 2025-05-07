@@ -1,0 +1,18 @@
+city,country,continent,capital,latitude,longitude
+London,United Kingdom,Europe,true,51.5074,0.1278
+Paris,France,Europe,true,48.8566,2.3522
+Berlin,Germany,Europe,true,52.5200,13.4050
+Rome,Italy,Europe,true,41.9028,12.4964
+Madrid,Spain,Europe,true,40.4168,3.7038
+Ottawa,Canada,North America,true,45.4215,75.6972
+Washington D.C.,United States,North America,true,38.9072,77.0369
+Mexico City,Mexico,North America,true,19.4326,99.1332
+Tokyo,Japan,Asia,true,35.6762,139.6503
+Beijing,China,Asia,true,39.9042,116.4074
+New Delhi,India,Asia,true,28.6139,77.2090
+Sydney,Australia,Oceania,false,33.8688,151.2093
+Canberra,Australia,Oceania,true,35.2809,149.1300
+Cairo,Egypt,Africa,true,30.0444,31.2357
+Pretoria,South Africa,Africa,true,25.7461,28.1881
+Brasilia,Brazil,South America,true,15.8267,47.9218
+Buenos Aires,Argentina,South America,true,34.6037,58.3816
